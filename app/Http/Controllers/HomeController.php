@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        return view("comics.create");
     }
 
     /**
@@ -37,7 +37,10 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $newComic = Comic::create($data);
+        $newComic->save();
+
     }
 
     /**
