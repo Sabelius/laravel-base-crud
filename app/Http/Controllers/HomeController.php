@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\comic;
+use App\Models\Comic;
 
 use Illuminate\Http\Request;
 
@@ -14,9 +14,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $comics = comic::all();
+        $comics = Comic::all();
 
-        return view("home", compact("comics"));
+        return view("comics.index", compact("comics"));
     }
 
     /**
@@ -46,9 +46,10 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
-        //
+        $single_comic = $comic;
+        return view("comics.show", compact("single_comic"));
     }
 
     /**
