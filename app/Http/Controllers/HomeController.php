@@ -40,6 +40,7 @@ class HomeController extends Controller
         $data = $request->all();
         $newComic = Comic::create($data);
         $newComic->save();
+        return redirect()->route('comics.show', $newComic);
 
     }
 
