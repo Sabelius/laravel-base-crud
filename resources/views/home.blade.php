@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section("title", "Journey-List")
+@section("title", "Comic-List")
 
 
 @section("content")
