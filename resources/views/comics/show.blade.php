@@ -14,4 +14,11 @@
     <h5>{{$single_comic->author}}</h5>
     <h5>${{$single_comic->price}}</h5>
 </div>
+<div class="container pt-2">
+    <form class="deleting-button" action="{{route('comics.destroy', $single_comic)}}" method="POST">
+        @method("delete")
+        @csrf
+        <button type="submit" class="btn btn-danger">Cancella fumetto</button>
+    </form>
+</div>
 @endsection
